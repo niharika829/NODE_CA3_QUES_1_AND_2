@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+	<!-- this will include the partial named head.ejs from includes folder -->
 	<%- include("./includes/head")%>
 	<body>
+		<!-- this will include the partial named nav.ejs from includes folder -->
 		<%- include("./includes/nav")%>
 		<div>
 			<h1 class="main-text">Welcome to the library :)</h1>
+			<!-- if some details are fetched then only the if part will work -->
 			<% if(book.length>0){ %>
 			<div>
 				<ul>
+					<!--for each loop to loop through each book's details-->
 					<% for(books of book){ %>
+					<!-- display title of the book ,when user will click on the particular title it will display details about that particular book only-->
 					<a href="/books/<%= books.bookId %>"
 						><li class="list-item"><br /><%= books.title %><br /><br /></li
 					></a>
@@ -17,9 +22,10 @@
 				</ul>
 			</div>
 		</div>
-
+		<!-- if no detail of book is fetched then else will come into play -->
 		<% }else{ %>
 		<h2>No books Found!!</h2>
+		<!-- this will include the partial named foot.ejs from includes folder -->
 		<% } %> <%- include("./includes/foot")%>
 	</body>
 </html>

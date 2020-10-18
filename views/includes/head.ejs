@@ -4,6 +4,9 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!-- everytime we were rendring to any .ejs page through controller we were  passing some value under the name of title
+	,it will be fetched below-->
 	<title><%= title %></title>
+	<!-- since we have passed the public folder inside express.static in app.js so we dont have to write the complete path to acccess the main css file-->
 	<link rel="stylesheet" href="/css/main.css" />
 </head>

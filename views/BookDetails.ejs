@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+	<!-- this will include the partial named head.ejs from includes folder -->
 	<%- include("./includes/head")%>
 	<body>
+		<!-- this will include the partial named nav.ejs from includes folder -->
+		<!-- if some details are fetched then only the if part will work -->
 		<%- include("./includes/nav")%> <% if(book.length>0){ %>
 		<div>
+			<!--for each loop to loop through each book's details--> 
 			<% for(books of book){ %>
 
 			<div class="container">
 				<br /><br />
 				<div class="row" style="background-color: black; color: white">
 					<div class="col-md-6">
+						<!-- static image for every book -->
 						<img
 							style="padding-top: 10px; padding-bottom: 10px"
 							src="/img/static.jpg"
@@ -18,9 +23,9 @@
 						/>
 					</div>
 					<div class="col-md-6">
+						<!-- display the detail of book -->
 						<h3>Book Id :- <%= books.bookId %></h3>
 						<h3>Book Name :- <%= books.title %></h3>
-
 						<h3>Book Description :- <%= books.description %></h3>
 						<h3>Created At :- <%= books.createdAt %></h3>
 						<h3>Book Price :- &#8377 <%= books.price %></h3>
@@ -31,8 +36,10 @@
 
 			<% } %>
 		</div>
+		<!-- if no detail of book is fetched then else will come into play -->
 		<% }else{ %>
 		<h2>No books Found!!</h2>
+			<!-- this will include the partial named foot.ejs from includes folder -->
 		<% } %> <%- include("./includes/foot")%>
 	</body>
 </html>

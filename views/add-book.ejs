@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+	<!-- this will include the partial named head.ejs from includes folder -->
 	<%- include("./includes/head")%>
 
 	<body>
+		<!-- this will include the partial named nav.ejs from includes folder -->
 		<%- include("./includes/nav")%>
 		<br />
 		<div class="main-add-book">
 			<h3 class="add-book">&#128214;-Add Book</h3>
 			<br />
+			<!--after user will click on the submit button with method post we will be hitting the url as '/user/books'-->
 			<form method="post" action="/user/books">
 				<label>Title:-</label><br /><input type="text" name="title" required /><br />
 				<label>price:-</label><br />
@@ -18,6 +21,7 @@
 			</form>
 		</div>
 		<br />
+		<!-- this will include the partial named foot.ejs from includes folder -->
 		<%- include("./includes/foot")%>
 	</body>
 </html>
