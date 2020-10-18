@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include("./includes/head")%>
+
+	<body>
+		<%- include("./includes/nav")%>
+		<br />
+		<div class="main-add-book">
+			<h3 class="add-book">&#128214;-Add Book</h3>
+			<br />
+			<form method="post" action="/user/books">
+				<label>Title:-</label><br /><input type="text" name="title" required /><br />
+				<label>price:-</label><br />
+				<input type="number" name="price" required /><br />
+				<label>description:-</label><br />
+				<textarea type="text" name="desc" rows="4" cols="30" required></textarea><br /><br /><br />
+				<input type="submit" value="add a book" /><br /><br />
+			</form>
+		</div>
+		<br />
+		<%- include("./includes/foot")%>
+	</body>
+</html>

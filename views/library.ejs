@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include("./includes/head")%>
+	<body>
+		<%- include("./includes/nav")%>
+		<div>
+			<h1 class="main-text">Welcome to the library :)</h1>
+			<% if(book.length>0){ %>
+			<div>
+				<ul>
+					<% for(books of book){ %>
+					<a href="/books/<%= books.bookId %>"
+						><li class="list-item"><br /><%= books.title %><br /><br /></li
+					></a>
+					<br />
+					<% } %>
+				</ul>
+			</div>
+		</div>
+
+		<% }else{ %>
+		<h2>No books Found!!</h2>
+		<% } %> <%- include("./includes/foot")%>
+	</body>
+</html>
